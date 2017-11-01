@@ -1,42 +1,4 @@
 # -*- coding: utf-8 -*-
-# from project.items import LagouItem
-# from scrapy.linkextractors import LinkExtractor
-# from scrapy.spiders import CrawlSpider, Rule
-# from scrapy_redis.spiders import RedisCrawlSpider
-#
-# class LagouSpider(RedisCrawlSpider):
-#     name = 'lagou'
-#     allowed_domains = ['lagou.com']
-#     # start_urls = ['http://www.lagou.com/']
-#     redis_key = 'lagou:start_urls'
-#
-#     rules = (
-#         Rule(LinkExtractor(allow=r'zhaopin/.*'),follow=True),
-#         Rule(LinkExtractor(allow=r'jobs/\d+.html'), callback='parse_item', follow=True)
-#     )
-#
-#     def parse_item(self, response):
-#         print "123"
-#         # print response.body
-#         item = LagouItem()
-#         url = response.url
-#         item['url'] = url
-#         item['company'] = response.xpath(' //div[@class="company"]/text()').extract()[0]
-#         item['position'] = response.xpath('//div[@class="job-name"]/@title').extract()[0]
-#         item['salary'] = response.xpath('//dd[@class="job_request"]//span[1]/text()').extract()[0]
-#         # item['salary_min'] = salary[0]
-#         # item['salary_max'] = salary[1]
-#         item['location'] = response.xpath('//dd[@class="job_request"]//span[2]/text()').extract()[0].replace('/','')
-#         item['work_years'] = response.xpath('//dd[@class="job_request"]//span[3]/text()').extract()[0].replace('/','')
-#         item['degree'] = response.xpath('//dd[@class="job_request"]//span[4]/text()').extract()[0].replace('/','')
-#         item['position_type'] = response.xpath('//dd[@class="job_request"]//span[5]/text()').extract()[0].replace('/','')
-#         item['tags'] = ','.join(response.xpath('//ul/li[@class="labels"]/text()').extract())
-#         item['pub_date'] = response.xpath('//p[@class="publish_time"]/text()').extract()[0].split()[0]
-#         item['position_desc'] =''.join(response.xpath('//dd[@class="job_bt"]//p/text()').extract())
-#         item['work_address'] = ','.join(response.xpath('//div[@class="work_addr"]/a/text()').extract()[:-1])
-#
-#         yield item
-
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
